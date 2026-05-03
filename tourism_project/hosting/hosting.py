@@ -3,7 +3,7 @@ import os
 
 api = HfApi(token=os.getenv("HF_TOKEN"))
 api.upload_folder(
-    folder_path=f"{base_folder_path}/deployment",     # the local folder containing your files
+    folder_path="/content/drive/MyDrive/tourism_project/deployment",     # the local folder containing your files
     repo_id="asveeranan/vws-tourism",          # the target repo
     repo_type="space",                      # dataset, model, or space
     path_in_repo="",                          # optional: subfolder path inside the repo

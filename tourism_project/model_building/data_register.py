@@ -18,7 +18,7 @@ except RepositoryNotFoundError:
     print(f"Space '{repo_id}' created.")
 
 api.upload_folder(
-    folder_path=f"{base_folder_path}/data",
+    folder_path="/content/drive/MyDrive/tourism_project/data",
     repo_id=repo_id,
     repo_type=repo_type,
 )
