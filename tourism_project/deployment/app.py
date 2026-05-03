@@ -4,10 +4,20 @@ from huggingface_hub import hf_hub_download
 import joblib
 
 # Download the model from the Model Hub
-model_path = hf_hub_download(repo_id="asveeranan/vws-tourism-model", filename="best_tourism_model.joblib")
+# model_path = hf_hub_download(repo_id="asveeranan/vws-tourism-model", filename="best_tourism_model.joblib")
 
-# Load the model
-model = joblib.load(model_path)
+# # Load the model
+# model = joblib.load(model_path)
+
+@st.cache_resource
+def load_model():
+    model_path = hf_hub_download(
+        repo_id="asveeranan/vws-tourism-model",
+        filename="best_tourism_model.joblib"
+    )
+    return joblib.load(model_path)
+
+model = load_model()
 
 # Streamlit UI for Customer Churn Prediction
 st.title("Visit With Us Tourism App")
